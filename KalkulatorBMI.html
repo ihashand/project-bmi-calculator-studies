@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Kalkulator BMI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script type="text/javascript">
+    function BMI() {
+        var weight = document.getElementById('w').value;
+        var height = document.getElementById('h').value;
+        var bmi = weight / (height / 100 * height / 100);
+        var bmiResult = (bmi.toFixed(2));
+        if (!isNaN(bmiResult)){
+            document.getElementById("result").innerHTML = "Twoje BMI wynosi  " + bmiResult;
+        }
+        else{
+            document.getElementById("result").innerHTML = "Nie poprawne dane!";
+        }
+    }
+</script>
+
+<body>
+    <div>
+        <h2>Kalkulator BMI</h2>
+        <p class="text">Wzrost</p>
+        <input type="text" id="h">
+        <p class="text">Waga</p>
+        <input type="text" id="w">
+        <p id="result"></p>
+        <button id="btn" onClick="BMI()">Policz</button>
+        <p id="info">Proszę podaj swój wzrost w [cm] oraz wagę w [kg] <br/>Wartości po przecinku proszę uprzedzać kropką</p>
+        <p id="rights">Patryk Krzemień</p>
+    </div>
+</body>
+
+</html>
